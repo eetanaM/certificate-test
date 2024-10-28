@@ -20,9 +20,9 @@ interface ICertificate {
 }
 
 interface ICertificateCardProps {
-    NAME: string,
-    DESCRIPTION: string | null,
-    PRICE: number,
+    certificate: ICertificate,
+    setOrderHandler: (certificate: ICertificate) => void,
+    resetOrderHandler: () => void
 }
 
 interface ICertificatesState {
@@ -31,9 +31,14 @@ interface ICertificatesState {
     certificates: ICertificate[],
 }
 
+interface IOrderState {
+    certificate: ICertificate | null,
+}
+
 
 export type {
     ICertificate,
     ICertificatesState,
+    IOrderState,
     ICertificateCardProps
 }
