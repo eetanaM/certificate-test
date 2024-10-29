@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router';
 
 import HomePage from './pages/home/HomePage';
+import PurchasePage from './pages/purchase/PurchasePage';
+import PaymentPage from './pages/payment/PaymentPage';
 
 import { getCertificates } from './services/certificates/actions';
 
@@ -19,6 +21,8 @@ function App(): React.JSX.Element {
     <>
       <Routes>
         <Route path='/' element={<HomePage />}/>
+        <Route path='/purchase' element={<PurchasePage />}/>
+        <Route path='/payment' element={<PaymentPage />}/>
       </Routes>
     </>
   )

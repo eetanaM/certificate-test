@@ -1,0 +1,49 @@
+.form_container {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    height: 400px;
+    width: 400px;
+    background-color: white;
+    border: 1px solid rgb(165, 162, 162);
+    border-radius: 20px;
+    box-shadow: 2px 2px 1px 1px rgb(165, 162, 162);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.form_container > label {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    font-size: 15px;
+}
+
+.form_container > label > input, .form_container > label > textarea {
+    width: 100%;
+}
+.form_container > label > textarea {
+    max-width: 320px;
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.buttons_container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.error_text {
+    color:red;
+    font-size: 12px;
+}

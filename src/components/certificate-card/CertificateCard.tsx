@@ -22,7 +22,7 @@ const CertificateCard = ({ certificate, setOrderHandler, resetOrderHandler }: IC
                 className={isActive
                     ? `${styles.card_container} ${styles.active}`
                     : styles.card_container}
-                onClick={() => handleClick()}
+                onClick={handleClick}
             >
                 <h2>{certificate.NAME}</h2>
                 <span

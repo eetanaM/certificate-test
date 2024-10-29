@@ -32,7 +32,10 @@ interface ICertificatesState {
 }
 
 interface IOrderState {
+    loading: boolean,
+    error: SerializedError | null,
     certificate: ICertificate | null,
+    success: boolean,
 }
 
 
