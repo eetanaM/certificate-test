@@ -51,8 +51,8 @@
 
 @media screen and (max-width: 500px) {
     .form_container {
-        width: 300px;
-        height: 600px;
+        width: 280px;
+        height: 500px;
     }
 
     .form_container > label > textarea {
