@@ -28,6 +28,10 @@ const Form = () => {
         }
     }, [success])
 
+    const returnBack = () => {
+        navigate(-1)
+    }
+
 
     const onSubmit: SubmitHandler<IFormData> = (data: IFormData) => {
         if (currentOrder && data) {
@@ -89,7 +93,7 @@ const Form = () => {
             </label>
 
             <div className={styles.buttons_container}>
-                <button>Назад</button>
+                <button onClick={returnBack}>Назад</button>
                 <button type="submit">Оплатить</button>
             </div>
         </form>

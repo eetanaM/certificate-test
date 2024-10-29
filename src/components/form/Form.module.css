@@ -47,3 +47,23 @@
     color:red;
     font-size: 12px;
 }
+
+
+@media screen and (max-width: 500px) {
+    .form_container {
+        width: 300px;
+        height: 600px;
+    }
+
+    .form_container > label > textarea {
+        height: 120px;
+        min-height: 100px;
+        max-height: 200px;
+        min-width: 250px;
+        max-width: 250px;
+    }
+
+    .form_container > label > input {
+        height: 25px;
+    }
+}

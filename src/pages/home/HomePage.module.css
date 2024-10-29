@@ -1,6 +1,32 @@
 .home_page_container {
-    margin: 5% 10% 5% 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     display: grid;
     grid-template-columns: 300px 300px 300px 300px;
     grid-template-rows: auto;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1500px) {
+    .home_page_container {
+        margin: 0;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        grid-template-columns: 300px 300px 300px;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .home_page_container {
+            grid-template-columns: 300px 300px;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .home_page_container {
+            grid-template-columns: 300px;
+        }
+    }
 }
