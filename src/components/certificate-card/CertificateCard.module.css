@@ -11,6 +11,9 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+
+    transform: translateY(-150%);
+    animation: ani 1s forwards;
 }
 
 .card_container:hover {
@@ -47,4 +50,21 @@
 
 .card_discounted_price {
     font-weight: bold;
+}
+
+@keyframes ani {
+    0% {transform: translateY(-150%);}
+  100% {transform: translateY(0);}
+}
+
+
+@media screen and (max-width: 700px) {
+    .card_container {
+        transform: translateX(-150%);
+    }
+
+    @keyframes ani {
+        0% {transform: translateX(-150%);}
+      100% {transform: translateY(0);}
+    }
 }

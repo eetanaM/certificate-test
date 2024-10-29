@@ -14,7 +14,7 @@ const Button = ():React.JSX.Element => {
 
     useEffect(() => {
         if(buttonRef.current) {
-            buttonRef.current.scrollIntoView()
+            buttonRef.current.scrollIntoView({behavior: "smooth"})
         }
     }, [currentOrder, buttonRef])
 

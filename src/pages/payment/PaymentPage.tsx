@@ -1,7 +1,7 @@
 const PaymentPage = () => {
     return (
         <div>
-            <h2>Страница оплаты</h2>
+            <h2>Оплата...</h2>
         </div>
     )
 }
