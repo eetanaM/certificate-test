@@ -17,27 +17,25 @@ const CertificateCard = ({ certificate, setOrderHandler, resetOrderHandler }: IC
         }
     }
     return (
-        <>
-            <div
-                className={isActive
-                    ? `${styles.card_container} ${styles.active}`
-                    : styles.card_container}
-                onClick={handleClick}
+        <div
+            className={isActive
+                ? `${styles.card_container} ${styles.active}`
+                : styles.card_container}
+            onClick={handleClick}
+        >
+            <h2>{certificate.NAME}</h2>
+            <span
+                className={certificate.DISCOUNT ? `${styles.card_price} ${styles.discounted}` : styles.card_price}
             >
-                <h2>{certificate.NAME}</h2>
-                <span
-                    className={certificate.DISCOUNT ? `${styles.card_price} ${styles.discounted}` : styles.card_price}
-                >
-                    Стоимость: {+certificate.PRICE} руб.
-                </span>
-                {
-                    certificate.DISCOUNT
-                    ? <span className={styles.card_discount}>Скидка: {+certificate.DISCOUNT} %</span>
-                    : null
-                }
-                <span className={styles.card_discounted_price}>Стоимость с учётом скидки: <br />{+certificate.SUMMA} руб.</span>
-            </div>
-        </>
+                Стоимость: {+certificate.PRICE} руб.
+            </span>
+            {
+                certificate.DISCOUNT
+                ? <span className={styles.card_discount}>Скидка: {+certificate.DISCOUNT} %</span>
+                : null
+            }
+            <span className={styles.card_discounted_price}>Стоимость с учётом скидки: <br />{+certificate.SUMMA} руб.</span>
+        </div>
     )
 }
 

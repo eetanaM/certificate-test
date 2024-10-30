@@ -4,7 +4,8 @@
     left:50%;
     transform: translate(-50%, -50%);
     padding: 30px;
-    height: 400px;
+    height: max-content;
+    max-height: 700px;
     width: 400px;
     background-color: white;
     border: 1px solid rgb(165, 162, 162);
@@ -16,6 +17,10 @@
     align-items: center;
     justify-content: space-around;
     gap: 20px;
+}
+
+.form_container > h3 {
+    color: rgb(223, 4, 106);
 }
 
 .form_container > label {
@@ -30,11 +35,32 @@
 
 .form_container > label > input, .form_container > label > textarea {
     width: 100%;
+    padding-left: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    background: #ffffff;
+    outline: none;
+    font-size: 11px;
 }
+
 .form_container > label > textarea {
+    padding-top: 10px;
+    min-width: 320px;
     max-width: 320px;
+    min-height: 50px;
     max-height: 100px;
     overflow-y: scroll;
+}
+
+.form_container > label > input {
+    height: 24px;
+}
+
+.form_container > label > input:focus, .form_container > label > textarea:focus {
+    border: 1px solid rgb(223, 4, 106);
 }
 
 .buttons_container {
@@ -43,27 +69,43 @@
     justify-content: space-around;
 }
 
+.buttons_container > button {
+    height: 30px;
+    width: 120px;
+    border: 1px solid rgb(223, 4, 106);
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.buttons_container > button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(223, 4, 106);
+
+    transition: all 0.2s linear;
+}
+
+.buttons_container > button:focus {
+    outline: none;
+    color: white;
+    background-color: rgb(223, 4, 106);
+}
+
 .error_text {
     color:red;
     font-size: 12px;
 }
 
-
 @media screen and (max-width: 500px) {
     .form_container {
         width: 280px;
-        height: 500px;
     }
 
     .form_container > label > textarea {
         height: 120px;
         min-height: 100px;
-        max-height: 200px;
-        min-width: 250px;
-        max-width: 250px;
-    }
-
-    .form_container > label > input {
-        height: 25px;
+        max-height: 150px;
+        min-width: 100%;
+        max-width: 100%;
     }
 }

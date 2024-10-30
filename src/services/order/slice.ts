@@ -28,6 +28,7 @@ export const orderSlice = createSlice({
             })
             .addCase(executePurchase.fulfilled, state => {
                 state.loading = false;
+                state.certificate = null;
                 state.success = true;
             })
             .addCase(executePurchase.rejected, (state, action) => {

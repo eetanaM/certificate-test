@@ -58,9 +58,9 @@ const Form = () => {
 
     return (
         <form className={styles.form_container} onSubmit={handleSubmit(onSubmit)}>
-            <span>{currentOrder?.NAME}</span>
+            <h3>{currentOrder?.NAME}</h3>
             <label>
-                ФИО*
+                <span style={errors.name?.type === "required" ? {color: "red"} : {}}>ФИО*</span>
                 <input
                     {...register("name", { required: true })}
                     type="text"
@@ -69,7 +69,7 @@ const Form = () => {
                 {errors.name?.type === "required" ? <span className={styles.error_text}>Поле обязательно к заполнению</span> : null}
             </label>
             <label>
-                Номер телефона*
+                <span style={errors.phone?.type === "required" ? {color: "red"} : {}}>Номер телефона*</span>
                 <input
                     {...register("phone", { required: true })}
                     placeholder="+7 (999)-999-99-99"
@@ -77,24 +77,24 @@ const Form = () => {
                 {errors.phone?.type === "required" ? <span className={styles.error_text}>Поле обязательно к заполнению</span> : null}
             </label>
             <label>
-                Сообщение
+                <span>Сообщение</span>
                 <textarea
                     {...register("message")}
                 />
             </label>
             <label>
-                Почта*
+                <span style={errors.email?.type === "required" ? {color: "red"} : {}}>Почта*</span>
                 <input
                     {...register("email", { required: true, pattern: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i })}
-                    placeholder="abcd@efg.hi"
+                    placeholder="example@domain.com"
                 />
                 {errors.email?.type === "required" ? <span className={styles.error_text}>Поле обязательно к заполнению</span> : null}
                 {errors.email?.type === "pattern" ? <span className={styles.error_text}>Форма не соответствует шаблону</span> : null}
             </label>
 
             <div className={styles.buttons_container}>
-                <button onClick={returnBack}>Назад</button>
                 <button type="submit">Оплатить</button>
+                <button onClick={returnBack}>Назад</button>
             </div>
         </form>
     )
